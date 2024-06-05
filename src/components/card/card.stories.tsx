@@ -2,7 +2,6 @@ import { Card, CardProps } from './card';
 import { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 
-// This tells Storybook how to list your stories and provide information
 export default {
   title: 'Atoms/Card',
   component: Card,
@@ -10,30 +9,28 @@ export default {
     variant: { control: 'select' },
     backgroundColor: { control: 'color' },
     fontColor: { control: 'color' },
+    label: { control: 'text' },
   },
   tags: ['autodocs'],
 } satisfies Meta<typeof Card>;
 
-// With named export we define component's story
 export const Default: StoryObj<CardProps> = (args: React.JSX.IntrinsicAttributes & CardProps) => <Card {...args} />;
-// Define default arguments for the Default StoryObj
+
 Default.args = {
   variant: 'elevation',
-  classes: 'w-64 h-64',
-  label:'test'
+  classes: 'w-64', // width only, height will be set via style
+  label: 'test',
 };
 
-// Second StoryObj
 export const WithText: StoryObj<CardProps> = (args: React.JSX.IntrinsicAttributes & CardProps) => (
   <Card {...args}>
     <div>
-      <span>Story that shows Card component with text</span>
+      <span>This is a longer text to test how the text wrapping works within the Card component. The text should wrap automatically when it exceeds the width of the card.</span>
     </div>
   </Card>
 );
-// Define default arguments for the WithText component and inherit arguments from Default component
+
 WithText.args = {
   ...Default.args,
-  classes: 'w-64 h-64 text-xl bg-green-600'
+  classes: 'w-64 text-xl bg-green-600',
 };
-
