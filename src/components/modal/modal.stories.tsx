@@ -43,11 +43,29 @@ export default {
       control: 'color',
       defaultValue: '#1D4ED8',
     },
+    width: {
+      control: {
+        type: 'text',
+        disable: true,
+      },
+      defaultValue: '580px',
+    },
+    height: {
+      control: {
+        type: 'text',
+        disable: true,
+      },
+      defaultValue: 'auto',
+    },
   },
   tags: ['autodocs'],
 } as Meta;
 
-const Template: StoryFn<ModalProps> = (args) => <Modal {...args} />;
+const Template: StoryFn<ModalProps> = (args) => (
+  <div className="modal-story-container">
+    <Modal {...args} />
+  </div>
+);
 
 export const RoundedSmall = Template.bind({});
 RoundedSmall.args = {
@@ -57,12 +75,12 @@ RoundedSmall.args = {
   title: 'Modal Title',
   description: 'lorem ipsum dolor sit amet consecteur. Arci vei orci eget phareta etc.',
   primaryButtonText: 'Primary Action',
-  primaryButtonColor: '#1D4ED8',
   secondaryButtonText: 'Secondary',
-  secondaryButtonColor: '#1D4ED8',
   onPrimaryButtonClick: action('Primary button clicked'),
   onSecondaryButtonClick: action('Secondary button clicked'),
   onCloseClick: action('Close button clicked'),
+  width: '360px',
+  height: '230px',
 };
 
 export const RoundedMedium = Template.bind({});
@@ -73,12 +91,12 @@ RoundedMedium.args = {
   title: 'Modal Title',
   description: 'lorem ipsum dolor sit amet consecteur. Arci vei orci eget phareta etc.',
   primaryButtonText: 'Primary Action',
-  primaryButtonColor: '#1D4ED8',
   secondaryButtonText: 'Secondary',
-  secondaryButtonColor: '#1D4ED8',
   onPrimaryButtonClick: action('Primary button clicked'),
   onSecondaryButtonClick: action('Secondary button clicked'),
   onCloseClick: action('Close button clicked'),
+  width: '580px',
+  height: '230px',
 };
 
 export const RoundedLarge = Template.bind({});
@@ -89,12 +107,12 @@ RoundedLarge.args = {
   title: 'Modal Title',
   description: 'lorem ipsum dolor sit amet consecteur. Arci vei orci eget phareta etc.',
   primaryButtonText: 'Primary Action',
-  primaryButtonColor: '#1D4ED8',
   secondaryButtonText: 'Secondary',
-  secondaryButtonColor: '#1D4ED8',
   onPrimaryButtonClick: action('Primary button clicked'),
   onSecondaryButtonClick: action('Secondary button clicked'),
   onCloseClick: action('Close button clicked'),
+  width: '800px',
+  height: '230px',
 };
 
 export const SimpleSmall = Template.bind({});
@@ -105,12 +123,12 @@ SimpleSmall.args = {
   title: 'Modal Title',
   description: 'lorem ipsum dolor sit amet consecteur. Arci vei orci eget phareta etc.',
   primaryButtonText: 'Primary Action',
-  primaryButtonColor: '#1D4ED8',
   secondaryButtonText: 'Secondary',
-  secondaryButtonColor: '#1D4ED8',
   onPrimaryButtonClick: action('Primary button clicked'),
   onSecondaryButtonClick: action('Secondary button clicked'),
   onCloseClick: action('Close button clicked'),
+  width: '360px',
+  height: '230px',
 };
 
 export const SimpleMedium = Template.bind({});
@@ -121,12 +139,12 @@ SimpleMedium.args = {
   title: 'Modal Title',
   description: 'lorem ipsum dolor sit amet consecteur. Arci vei orci eget phareta etc.',
   primaryButtonText: 'Primary Action',
-  primaryButtonColor: '#1D4ED8',
   secondaryButtonText: 'Secondary',
-  secondaryButtonColor: '#1D4ED8',
   onPrimaryButtonClick: action('Primary button clicked'),
   onSecondaryButtonClick: action('Secondary button clicked'),
   onCloseClick: action('Close button clicked'),
+  width: '580px',
+  height: '230px',
 };
 
 export const SimpleLarge = Template.bind({});
@@ -137,10 +155,10 @@ SimpleLarge.args = {
   title: 'Modal Title',
   description: 'lorem ipsum dolor sit amet consecteur. Arci vei orci eget phareta etc.',
   primaryButtonText: 'Primary Action',
-  primaryButtonColor: '#1D4ED8',
   secondaryButtonText: 'Secondary',
-  secondaryButtonColor: '#1D4ED8',
   onPrimaryButtonClick: action('Primary button clicked'),
   onSecondaryButtonClick: action('Secondary button clicked'),
   onCloseClick: action('Close button clicked'),
+  width: '800px',
+  height: '230px',
 };

@@ -28,12 +28,12 @@ export interface ModalProps {
   title: string;
   description: string;
   primaryButtonText: string;
-  primaryButtonColor: string;
   secondaryButtonText: string;
-  secondaryButtonColor: string;
   onPrimaryButtonClick?: () => void;
   onSecondaryButtonClick?: () => void;
   onCloseClick?: () => void;
+  width: string;
+  height: string;
 }
 
 const Modal: React.FC<ModalProps> = ({
@@ -43,22 +43,28 @@ const Modal: React.FC<ModalProps> = ({
   title,
   description,
   primaryButtonText,
-  primaryButtonColor,
   secondaryButtonText,
-  secondaryButtonColor,
   onPrimaryButtonClick,
   onSecondaryButtonClick,
   onCloseClick,
+  width,
+  height,
 }) => {
+  const sizeStyles = {
+    small: 'max-w-[360px] max-h-[230px]',
+    medium: 'max-w-[580px] max-h-[230px]',
+    large: 'max-w-[800px] max-h-[230px]',
+  };
+
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-      <div className="flex flex-col p-6 bg-white rounded-xl border-0 border-black border-solid shadow-sm max-w-[800px]">
+    <div className="fixed top-0 left-0 flex items-center justify-center w-full h-full bg-black bg-opacity-50">
+      <div className={`flex flex-col p-6 bg-white rounded-xl border-0 border-black border-solid shadow-lg ${sizeStyles[inputSize]}`}>
         <div className="flex gap-5 justify-between items-start max-md:flex-wrap max-md:max-w-full">
           <div className="flex flex-col mt-1.5 max-md:max-w-full">
-            <div className="text-xl font-semibold text-black max-md:max-w-full">
+            <div className="text-xl font-semibold text-black max-md:max-w-full break-words">
               {title}
             </div>
-            <div className="mt-3.5 text-sm text-zinc-600 max-md:max-w-full">
+            <div className="mt-3.5 text-sm text-zinc-600 max-md:max-w-full break-words">
               {description}
             </div>
           </div>
@@ -79,21 +85,20 @@ const Modal: React.FC<ModalProps> = ({
         
         <div className="flex justify-end gap-2 mt-3 text-sm font-medium max-md:flex-wrap max-md:pl-5">
           <button
-            className="justify-center px-3 py-2 whitespace-nowrap rounded-md border-2 border-solid"
-            style={{ color: secondaryButtonColor, borderColor: secondaryButtonColor }}
+            className="justify-center px-3 py-2 whitespace-nowrap rounded-md border-2 border-solid text-blue-700 border-blue-700"
             onClick={onSecondaryButtonClick}
           >
             {secondaryButtonText}
           </button>
           <button
-            className="justify-center px-3 py-2 text-white rounded-md"
-            style={{ backgroundColor: primaryButtonColor }}
+            className="justify-center px-3 py-2 text-white rounded-md bg-blue-700"
             onClick={onPrimaryButtonClick}
           >
             {primaryButtonText}
           </button>
         </div>
-        <div className="mt-4">
+
+        <div className="">
           <Input type={inputType} size={inputSize} />
         </div>
       </div>
