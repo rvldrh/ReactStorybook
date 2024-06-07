@@ -23,40 +23,17 @@ export default {
       control: 'text',
       defaultValue: 'lorem ipsum dolor sit amet consecteur. Arci vei orci eget phareta etc.',
     },
-    inputText: {
-      control: 'text',
-      defaultValue: '',
-    },
+    
     primaryButtonText: {
       control: 'text',
       defaultValue: 'Primary Action',
     },
-    primaryButtonColor: {
-      control: 'color',
-      defaultValue: '#1D4ED8',
-    },
+    
     secondaryButtonText: {
       control: 'text',
       defaultValue: 'Secondary',
     },
-    secondaryButtonColor: {
-      control: 'color',
-      defaultValue: '#1D4ED8',
-    },
-    width: {
-      control: {
-        type: 'text',
-        disable: true,
-      },
-      defaultValue: '580px',
-    },
-    height: {
-      control: {
-        type: 'text',
-        disable: true,
-      },
-      defaultValue: 'auto',
-    },
+    
   },
   tags: ['autodocs'],
 } as Meta;
@@ -71,7 +48,6 @@ export const RoundedSmall = Template.bind({});
 RoundedSmall.args = {
   inputType: 'rounded',
   inputSize: 'small',
-  inputText: '',
   title: 'Modal Title',
   description: 'lorem ipsum dolor sit amet consecteur. Arci vei orci eget phareta etc.',
   primaryButtonText: 'Primary Action',
@@ -79,15 +55,13 @@ RoundedSmall.args = {
   onPrimaryButtonClick: action('Primary button clicked'),
   onSecondaryButtonClick: action('Secondary button clicked'),
   onCloseClick: action('Close button clicked'),
-  width: '360px',
-  height: '230px',
+  
 };
 
 export const RoundedMedium = Template.bind({});
 RoundedMedium.args = {
   inputType: 'rounded',
   inputSize: 'medium',
-  inputText: '',
   title: 'Modal Title',
   description: 'lorem ipsum dolor sit amet consecteur. Arci vei orci eget phareta etc.',
   primaryButtonText: 'Primary Action',
@@ -95,15 +69,13 @@ RoundedMedium.args = {
   onPrimaryButtonClick: action('Primary button clicked'),
   onSecondaryButtonClick: action('Secondary button clicked'),
   onCloseClick: action('Close button clicked'),
-  width: '580px',
-  height: '230px',
+  
 };
 
 export const RoundedLarge = Template.bind({});
 RoundedLarge.args = {
   inputType: 'rounded',
   inputSize: 'large',
-  inputText: '',
   title: 'Modal Title',
   description: 'lorem ipsum dolor sit amet consecteur. Arci vei orci eget phareta etc.',
   primaryButtonText: 'Primary Action',
@@ -111,15 +83,13 @@ RoundedLarge.args = {
   onPrimaryButtonClick: action('Primary button clicked'),
   onSecondaryButtonClick: action('Secondary button clicked'),
   onCloseClick: action('Close button clicked'),
-  width: '800px',
-  height: '230px',
+  
 };
 
 export const SimpleSmall = Template.bind({});
 SimpleSmall.args = {
   inputType: 'simple',
   inputSize: 'small',
-  inputText: '',
   title: 'Modal Title',
   description: 'lorem ipsum dolor sit amet consecteur. Arci vei orci eget phareta etc.',
   primaryButtonText: 'Primary Action',
@@ -127,15 +97,13 @@ SimpleSmall.args = {
   onPrimaryButtonClick: action('Primary button clicked'),
   onSecondaryButtonClick: action('Secondary button clicked'),
   onCloseClick: action('Close button clicked'),
-  width: '360px',
-  height: '230px',
+  
 };
 
 export const SimpleMedium = Template.bind({});
 SimpleMedium.args = {
   inputType: 'simple',
   inputSize: 'medium',
-  inputText: '',
   title: 'Modal Title',
   description: 'lorem ipsum dolor sit amet consecteur. Arci vei orci eget phareta etc.',
   primaryButtonText: 'Primary Action',
@@ -143,15 +111,13 @@ SimpleMedium.args = {
   onPrimaryButtonClick: action('Primary button clicked'),
   onSecondaryButtonClick: action('Secondary button clicked'),
   onCloseClick: action('Close button clicked'),
-  width: '580px',
-  height: '230px',
+  
 };
 
 export const SimpleLarge = Template.bind({});
 SimpleLarge.args = {
   inputType: 'simple',
   inputSize: 'large',
-  inputText: '',
   title: 'Modal Title',
   description: 'lorem ipsum dolor sit amet consecteur. Arci vei orci eget phareta etc.',
   primaryButtonText: 'Primary Action',
@@ -159,6 +125,5 @@ SimpleLarge.args = {
   onPrimaryButtonClick: action('Primary button clicked'),
   onSecondaryButtonClick: action('Secondary button clicked'),
   onCloseClick: action('Close button clicked'),
-  width: '800px',
-  height: '230px',
+  
 };

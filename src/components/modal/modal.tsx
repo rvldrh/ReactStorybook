@@ -24,7 +24,6 @@ const Input: React.FC<InputProps> = ({ type, size }) => {
 export interface ModalProps {
   inputType: 'rounded' | 'simple';
   inputSize: 'small' | 'medium' | 'large';
-  inputText: string;
   title: string;
   description: string;
   primaryButtonText: string;
@@ -32,14 +31,11 @@ export interface ModalProps {
   onPrimaryButtonClick?: () => void;
   onSecondaryButtonClick?: () => void;
   onCloseClick?: () => void;
-  width: string;
-  height: string;
 }
 
 const Modal: React.FC<ModalProps> = ({
   inputType,
   inputSize,
-  inputText,
   title,
   description,
   primaryButtonText,
@@ -47,8 +43,6 @@ const Modal: React.FC<ModalProps> = ({
   onPrimaryButtonClick,
   onSecondaryButtonClick,
   onCloseClick,
-  width,
-  height,
 }) => {
   const sizeStyles = {
     small: 'max-w-[360px] max-h-[230px]',
@@ -78,7 +72,7 @@ const Modal: React.FC<ModalProps> = ({
         
         <input 
           type='text' 
-          value={inputText}
+          value=""
           className="shrink-0 mt-3 h-9 bg-purple-200 rounded-md border border-purple-500 border-dashed max-md:max-w-full flex items-center pl-4"
           readOnly
         />
