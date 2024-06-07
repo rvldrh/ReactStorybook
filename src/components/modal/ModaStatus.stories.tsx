@@ -11,19 +11,25 @@
       onClose: { action: 'closed' },
       message: { control: 'text' },
       title: { control: 'text' },
-      imageSrc: { control: 'text' },
     },
+    tags: ['autodocs'],
   } as Meta;
+
+  
 
   const Template: StoryFn<ModalStatusProps> = (args) => {
     const [isOpen, setIsOpen] = useState(args.isOpen);
-
+    
+    
     return (
-      <ModalStatus
-        {...args}
-        isOpen={isOpen}
-        onClose={() => setIsOpen(false)}
-      />
+      <div className="modal-story-container">
+    <ModalStatus {...args} 
+    isOpen={isOpen}
+    onClose={() => setIsOpen(false)}
+    />
+  </div>
+      
+      
     );
   };
 
