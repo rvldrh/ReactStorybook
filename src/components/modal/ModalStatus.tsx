@@ -1,4 +1,3 @@
-// src/components/modalStatus.tsx
 import React from 'react';
 
 export type ModalStatusProps = {
@@ -7,9 +6,23 @@ export type ModalStatusProps = {
   message: string;
   title: string;
   imageSrc: string;
+  bgColor: string;
+  textBorderColor: string;
+  primaryButtonText: string;
+  secondaryButtonText: string;
 };
 
-const ModalStatus: React.FC<ModalStatusProps> = ({ isOpen, onClose, message, title, imageSrc }) => {
+const ModalStatus: React.FC<ModalStatusProps> = ({
+  isOpen,
+  onClose,
+  message,
+  title,
+  imageSrc,
+  bgColor,
+  textBorderColor,
+  primaryButtonText,
+  secondaryButtonText,
+}) => {
   if (!isOpen) return null;
 
   return (
@@ -35,15 +48,15 @@ const ModalStatus: React.FC<ModalStatusProps> = ({ isOpen, onClose, message, tit
         <div className="flex justify-end gap-2 mt-5 text-sm font-medium max-md:flex-wrap max-md:pl-5">
           <button
             onClick={onClose}
-            className="px-3 py-2 text-blue-600 whitespace-nowrap rounded-md border-2 border-blue-600 border-solid"
+            className={`px-3 py-2 whitespace-nowrap rounded-md border-2 ${textBorderColor} border-solid`}
           >
-            Secondary
+            {secondaryButtonText}
           </button>
           <button
             onClick={onClose}
-            className="px-3 py-2 text-white bg-blue-600 rounded-md"
+            className={`px-3 py-2 text-white ${bgColor} rounded-md`}
           >
-            Primary Action
+            {primaryButtonText}
           </button>
         </div>
       </div>
