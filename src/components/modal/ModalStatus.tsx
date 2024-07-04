@@ -10,6 +10,8 @@ export type ModalStatusProps = {
   textBorderColor: string;
   primaryButtonText: string;
   secondaryButtonText: string;
+  primaryAction?: () => void;
+  secondaryAction?: () => void;
 };
 
 const ModalStatus: React.FC<ModalStatusProps> = ({
@@ -22,8 +24,12 @@ const ModalStatus: React.FC<ModalStatusProps> = ({
   textBorderColor,
   primaryButtonText,
   secondaryButtonText,
+  primaryAction,
+  secondaryAction,
+
 }) => {
   if (!isOpen) return null;
+
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
@@ -47,13 +53,13 @@ const ModalStatus: React.FC<ModalStatusProps> = ({
         <div className="shrink-0 h-9 bg-purple-200 rounded-md border border-purple-500 border-dashed max-md:max-w-full" />
         <div className="flex justify-end gap-2 mt-5 text-sm font-medium max-md:flex-wrap max-md:pl-5">
           <button
-            onClick={onClose}
+            onClick={secondaryAction}
             className={`px-3 py-2 whitespace-nowrap rounded-md border-2 ${textBorderColor} border-solid`}
           >
             {secondaryButtonText}
           </button>
           <button
-            onClick={onClose}
+            onClick={primaryAction}
             className={`px-3 py-2 text-white ${bgColor} rounded-md`}
           >
             {primaryButtonText}
